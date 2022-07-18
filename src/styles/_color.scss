@@ -1,0 +1,9 @@
+.color {
+  flex: 1;
+  height: 80vh;
+  border: 2px solid rgb(145, 145, 145);
+  border-right: 0;
+  &:last-child {
+    border-right: 2px solid rgb(145, 145, 145);
+  }
+}
