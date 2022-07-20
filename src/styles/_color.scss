@@ -3,7 +3,47 @@
   height: 80vh;
   border: 2px solid rgb(145, 145, 145);
   border-right: 0;
+  position: relative;
   &:last-child {
     border-right: 2px solid rgb(145, 145, 145);
+  }
+  .color__id {
+    margin-top: 2rem;
+  }
+  .icons__div {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    .icon {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+    }
+  }
+  .slider {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    width: 60%;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      margin: 1rem 0rem;
+      width: 100%;
+      position: relative;
+      border-radius: 1rem;
+      cursor: pointer;
+    }
   }
 }
