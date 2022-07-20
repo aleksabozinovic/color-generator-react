@@ -1,10 +1,9 @@
 import React from "react";
 
-const Color = ({ color, setColor }) => {
-  // console.log(color);
+const Color = ({ newColors }) => {
   return (
-    <div style={{ background: `#${color}` }} className="color">
-      <h1>{`#${color}`}</h1>
+    <div style={{ background: `#${newColors}` }} className="color">
+      <h1>{newColors}</h1>
     </div>
   );
 };
