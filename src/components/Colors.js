@@ -3,11 +3,11 @@ import React from "react";
 // Import Color
 import Color from "./Color";
 
-const Colors = ({ colorsArray }) => {
+const Colors = ({ color, setColor }) => {
   return (
     <div className="colors">
-      {colorsArray.map((newColors) => (
-        <Color newColors={newColors} />
+      {color.map((newColors) => (
+        <Color newColors={newColors} setColor={setColor} color={color} />
       ))}
     </div>
   );
