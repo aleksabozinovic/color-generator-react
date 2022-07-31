@@ -1,0 +1,85 @@
+.sideNav {
+  transition: all 0.5s ease;
+  transform: translateX(-100%);
+  padding-block: 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 25%;
+  background: #fff;
+  box-shadow: 2px 2px 50px #d6d6d680;
+  overflow-y: scroll;
+
+  h2 {
+    margin-top: 1rem;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+  }
+
+  .library__colors {
+    opacity: 1;
+    transition: all 0.5s ease;
+    p {
+      margin-top: 1rem;
+    }
+
+    .library__color {
+      display: block;
+      height: 7rem;
+      display: flex;
+      padding-inline: 2rem;
+      margin-block: 2rem;
+      transition: all 0.3s ease;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .painted__div {
+        min-width: 45%;
+        height: 80%;
+        margin-block: auto;
+      }
+
+      .library__description {
+        min-width: 55%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h4 {
+          font-size: 1.3rem;
+          margin-bottom: 1rem;
+          color: #666;
+          font-weight: 700;
+        }
+        h6 {
+          font-size: 1.1rem;
+          color: #666;
+          font-weight: 400;
+        }
+      }
+      &:hover {
+        background: #98d0fd52;
+      }
+    }
+    &.hidden {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #98a7fd;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+  &.active {
+    transform: translateX(0);
+  }
+}

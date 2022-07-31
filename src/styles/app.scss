@@ -12,8 +12,10 @@ body {
   height: 100%;
   text-align: center;
   padding: 3rem 10rem;
+  position: relative;
 }
 
 @import "./nav";
 @import "./color";
 @import "./colors";
+@import "./sideBar";
