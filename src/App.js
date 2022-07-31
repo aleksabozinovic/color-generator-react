@@ -11,14 +11,25 @@ import { randomColor } from "./functions/createColor";
 function App() {
   // State
   const [color, setColor] = useState([]);
+
+  const [isLocked, setIsLocked] = useState(false);
+
+  // Use Effect
   useEffect(() => {
     setColor(() => [randomColor()]);
   }, []);
 
+  // Handler
+
   return (
     <div className="App">
-      <Nav color={color} setColor={setColor} />
-      <Colors color={color} setColor={setColor} />
+      <Nav isLocked={isLocked} setColor={setColor} />
+      <Colors
+        isLocked={isLocked}
+        setIsLocked={setIsLocked}
+        color={color}
+        setColor={setColor}
+      />
     </div>
   );
 }

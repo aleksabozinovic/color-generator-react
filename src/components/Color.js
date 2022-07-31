@@ -12,11 +12,16 @@ import chroma from "chroma-js";
 
 import Slider from "./Slider";
 
-const Color = ({ newColors, setColor, color }) => {
+const Color = ({ newColors, setColor, isLocked, setIsLocked }) => {
   // Handlers
   const openSliderHandler = (e) => {
+    if (isLocked) return;
     const slider = document.querySelector(".slider");
     slider.classList.remove("slider-hidden");
+  };
+
+  const lockIconHandler = () => {
+    setIsLocked((previous) => !previous);
   };
 
   // Functions
@@ -41,11 +46,21 @@ const Color = ({ newColors, setColor, color }) => {
           icon={faSliders}
           onClick={openSliderHandler}
         />
-        <FontAwesomeIcon
-          style={{ color: `${checkContrast(newColors)}` }}
-          className="icon"
-          icon={faLockOpen}
-        />
+        {isLocked ? (
+          <FontAwesomeIcon
+            style={{ color: `${checkContrast(newColors)}` }}
+            className="icon"
+            icon={faLock}
+            onClick={() => lockIconHandler()}
+          />
+        ) : (
+          <FontAwesomeIcon
+            style={{ color: `${checkContrast(newColors)}` }}
+            className="icon"
+            icon={faLockOpen}
+            onClick={() => lockIconHandler()}
+          />
+        )}
       </div>
       <Slider newColors={newColors} setColor={setColor} />
     </div>

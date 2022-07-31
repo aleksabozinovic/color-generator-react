@@ -7,8 +7,9 @@ import { randomColor } from "../functions/createColor";
 
 import { coloredSlider } from "../functions";
 
-const Nav = ({ setColor, color }) => {
+const Nav = ({ setColor, isLocked }) => {
   const changeColor = () => {
+    if (isLocked) return;
     setColor(() => [randomColor()]);
   };
 
