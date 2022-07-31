@@ -25,19 +25,21 @@ function App() {
   // Handler
 
   return (
-    <div className="App">
+    <div className={`App ${activeNav ? "active" : ""}`}>
       <Nav
+        activeNav={activeNav}
         setActiveNav={setActiveNav}
         isLocked={isLocked}
         setColor={setColor}
       />
       <Colors
+        activeNav={activeNav}
         isLocked={isLocked}
         setIsLocked={setIsLocked}
         color={color}
         setColor={setColor}
       />
-      <SideNav activeNav={activeNav} />
+      <SideNav setColor={setColor} activeNav={activeNav} />
     </div>
   );
 }

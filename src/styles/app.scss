@@ -13,6 +13,10 @@ body {
   text-align: center;
   padding: 3rem 10rem;
   position: relative;
+  transition: all 0.5s ease;
+  &.active {
+    margin-left: 20%;
+  }
 }
 
 @import "./nav";
