@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowsRotate, faBook } from "@fortawesome/free-solid-svg-icons";
 import { randomColor } from "../functions/createColor";
 
+import { coloredSlider } from "../functions";
+
 const Nav = ({ setColor, color }) => {
   const changeColor = () => {
     setColor(() => [randomColor()]);
