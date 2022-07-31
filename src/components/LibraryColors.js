@@ -4,17 +4,27 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
+// Import Data
+import { basicColorData, preMadeColorData } from "../data";
+
 const LibraryColor = () => {
   // State
   const [isShown1, setIsShown1] = useState(false);
   const [isShown2, setIsShown2] = useState(false);
   const [isShown3, setIsShown3] = useState(false);
 
+  const [basicColors, setBasicColors] = useState(basicColorData());
+  const [preMadeColors, setPreMadeColors] = useState(preMadeColorData());
+
   const hideColorsHandler = (e, setIsShown) => {
     const childrenElement = e.target.closest("div").children[1];
     childrenElement.classList.toggle("hidden");
     setIsShown((previous) => !previous);
   };
+
+  const basicColor = basicColors.map((element) => element);
+  console.log(basicColor);
+
   return (
     <div className="library">
       {/* YOUR COLORS*/}
@@ -45,64 +55,30 @@ const LibraryColor = () => {
         {/* Library Colors */}
         <div className="library__colors hidden">
           {/* Each Color */}
-          <div className="library__color">
+
+          {/* <div className="library__color">
             <div
               style={{ background: "#ff0000" }}
               className="painted__div"
             ></div>
             <div className="library__description">
-              <h4>Red</h4>
+              <h4>{basicColor.name}</h4>
               <h6>#ff0000 </h6>
             </div>
-          </div>
+          </div> */}
 
-          {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#ffff00" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Yellow</h4>
-              <h6>#ffff00</h6>
+          {basicColor.map((element) => (
+            <div className="library__color">
+              <div
+                style={{ background: `${element.background}` }}
+                className="painted__div"
+              ></div>
+              <div className="library__description">
+                <h4>{element.name}</h4>
+                <h6>{element.background}</h6>
+              </div>
             </div>
-          </div>
-
-          {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#0000ff" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Blue</h4>
-              <h6>#0000ff</h6>
-            </div>
-          </div>
-
-          {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#800080" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Purple</h4>
-              <h6>#800080</h6>
-            </div>
-          </div>
-
-          {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#ff6d0a" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Orange</h4>
-              <h6>#ff6d0a</h6>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
