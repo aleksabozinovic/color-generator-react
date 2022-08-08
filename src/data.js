@@ -40,7 +40,7 @@ export const preMadeColorData = () => {
     {
       background: "#ff7676",
       name: "Light Red",
-      id: uuid(),
+      id: uuidv4(),
     },
   ];
 };

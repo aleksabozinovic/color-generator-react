@@ -22,9 +22,6 @@ const LibraryColor = () => {
     setIsShown((previous) => !previous);
   };
 
-  const basicColor = basicColors.map((element) => element);
-  console.log(basicColor);
-
   return (
     <div className="library">
       {/* YOUR COLORS*/}
@@ -56,19 +53,8 @@ const LibraryColor = () => {
         <div className="library__colors hidden">
           {/* Each Color */}
 
-          {/* <div className="library__color">
-            <div
-              style={{ background: "#ff0000" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>{basicColor.name}</h4>
-              <h6>#ff0000 </h6>
-            </div>
-          </div> */}
-
-          {basicColor.map((element) => (
-            <div className="library__color">
+          {basicColors.map((element) => (
+            <div key={element.id} className="library__color">
               <div
                 style={{ background: `${element.background}` }}
                 className="painted__div"
@@ -96,28 +82,18 @@ const LibraryColor = () => {
         {/* Library Colors */}
         <div className="library__colors hidden">
           {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#98a7fd" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Light Blue</h4>
-              <h6>#98a7fd</h6>
+          {preMadeColors.map((element) => (
+            <div key={element.id} className="library__color">
+              <div
+                style={{ background: `${element.background}` }}
+                className="painted__div"
+              ></div>
+              <div className="library__description">
+                <h4>{element.name}</h4>
+                <h6>{element.background}</h6>
+              </div>
             </div>
-          </div>
-
-          {/* Each Color */}
-          <div className="library__color">
-            <div
-              style={{ background: "#FF7676" }}
-              className="painted__div"
-            ></div>
-            <div className="library__description">
-              <h4>Light Blue</h4>
-              <h6>#ff7676</h6>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
